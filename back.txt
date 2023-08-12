@@ -1,0 +1,100 @@
+const menu=[
+    {
+        id: 1,
+        name: "Pancakes",
+        price: "$7.99",
+        category:"Breakfast",
+        photofood :"photos/pancake.jpg",
+        desc: "A  flat cake made by pouring batter into a hot pan and frying it on both sides.Topped with maple syrup and served with fresh fruits.",
+    },
+    {
+        id: 2,
+        name: "Salad Bowl",
+        price: "$6.99",
+        category:"Breakfast",
+        photofood :"photos/rainbow-salad-power-bowl-1.jpg",
+        desc: "Mixed, mostly natural ingredients like tomatoes, green beans, cucumbers, beets, and mushrooms dressed with olive oil, mustard sauce and other dressings.",
+    },
+    {
+        id: 3,
+        name: "Burger and fries",
+        price: "$10.99",
+        category:"Lunch",
+        photofood :"photos/Burger-and-Fries.jpg",
+        desc: "Patty of ground meat, typically beef—placed inside a sliced bun or bread roll,topped with harissa-mayonnaise and ketchup.Served alongside crispy fries and ketchup.",
+    },
+    {
+        id: 4,
+        name: "Croissant",
+        price: "$8.99",
+        category:"Dessert",
+        photofood :"photos/Fruits-and-nutella.jpg",
+        desc: "Buttery, flaky, viennoiserie pastry using the French yeast-leavened laminated dough, topped with fresh bananas,strawberries and chocolate syrup.",
+    },
+    {
+        id: 4,
+        name: "Farm-Pizza",
+        price: "$12.99",
+        category:"Lunch",
+        photofood :"photos/pizzajp.jpg",
+        desc: "flattened bread dough topped with olive oil, oregano, tomato, mushroom, onions, capsicum, olives, mozzarella, baked using a wood-fired oven heated to a very high temperature",
+    }
+];
+// const photofood=document.getElementById("photofood");
+// const name=document.querySelector(".name");
+// const price=document.querySelector(".price");
+// const desc=document.querySelector(".info");
+const menu_option=document.querySelector(".menu-items");
+// let currentItem=0;
+
+const btn=document.querySelectorAll('.btn');
+//load items
+window.addEventListener("DOMContentLoaded",function()
+{
+    displayMenuItems(menu);
+});
+
+//filter items
+btn.forEach(function(butn){
+    butn.addEventListener('click',function(e)
+    {
+        const category= e.currentTarget.dataset.id;
+        const menuCategory=menu.filter(function(menuItem)
+        {
+            if(menuItem.category==category){
+                return menuItem;
+            }    
+        });
+        if(category=='all')
+        {
+            displayMenuItems(menu);
+        }
+        else{
+            displayMenuItems(menuCategory);
+        }
+    }
+);
+});
+function displayMenuItems(menuItems){
+    let displayMenu=menuItems.map(function (item)
+    {
+        return `<article class="menu-items">
+        <div class="item_img">
+            <img src="${item.photofood}" alt=${item.name} id=photofood">
+        </div>
+        <div class="desc">
+            <div class="nameprice">
+                <h4 id="name">${item.name}</h4>
+                <h4 id="price">${item.price}</h4>
+            </div>
+            <hr id="break1">
+            <div class="info">
+                <p>${item.desc}</p> 
+            </div>
+        </div>
+    </article>`;
+    });
+    displayMenu=displayMenu.join("");
+    menu_option.innerHTML=displayMenu;
+}
+

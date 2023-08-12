@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Rye&display=swap');
+
+body{
+    background: #dee3e4;
+}
+.item_img img{
+    height: 150px;
+    width: 230px;
+    border: 3px solid #b38405e7;
+    float: left;
+    border-radius: 3%;
+}
+.nameprice{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    width: 280px;
+    /* font-family: 'Abel', sans-serif; */
+    font-family: 'Merriweather', serif;
+    /* font-family: 'Rye', cursive; */
+}
+#name{
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 70px;
+    /* text-align: end; */
+    max-width: 150px;
+    color: black;
+    font-weight: 900;
+}
+#price{
+    margin: 0;
+    padding-right: 0px;
+    text-align: end;
+    /* max-width: 100px; */
+    text-align: end;
+    color: #b38405e7;
+}
+.menu-items{
+    height: 160px;
+    width: 600px;
+    margin: 20px;
+    padding: 0;
+}
+.info{
+    padding-left: 2px;
+    padding-bottom: 3px;
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    font-weight: 600;
+}
+#break1{
+    border: 1px dashed #b38405e7;
+    margin: 0;
+}
+#break0{
+    border: 3px solid #b38405e7;
+    width: 200px;
+    text-align: center;
+    border-radius: 1%;
+}
+.allitems{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap:70px 70px;
+    width: 40%;
+    margin-right: 0px; 
+}
+.menu_options{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    font-weight: 700;
+    color: #b38405e7;
+    border: 2px solid #b38405e7;
+    border-radius: 8%;
+    margin: 10px;
+    padding: 5px;
+}
+.heading{
+    color: #b38405e7;
+    text-align: center;
+}
